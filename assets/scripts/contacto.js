@@ -74,8 +74,9 @@ function validarFormulario(event) {
 
     let correoEsValido = () => {
         let esValido = true;
+        let textEmail = email.input.value;
 
-        if (email.input.value.length < 50 || email.input.value.length > 200) {
+        if ( (textEmail.length < 5) || (textEmail.indexOf('@') == -1) || (textEmail.indexOf('@') != textEmail.lastIndexOf('@')) || (textEmail.indexOf('@') > textEmail.lastIndexOf('.')) ){
             informarError(email);
             esValido = false;
         } else informarExito(email);
