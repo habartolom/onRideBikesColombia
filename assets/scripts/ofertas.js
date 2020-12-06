@@ -1,17 +1,21 @@
-const botonTitulos = document.getElementById('titulo');
-const botonFondos = document.getElementById('titulo');
+const botonTitulos = document.getElementById('titulos');
+const botonFondos = document.getElementById('fondo');
 const botonMostrarOcultar = document.getElementById('toggle');
 
 const titulo = document.getElementById('tituloOfertas');
+const containerOfertas = document.getElementById('container');
+const oferta = document.getElementById('ofertaOculta');
 
-botonTitulos.addEventListener('click', ()=>{
-    titulo.classList.add("text-info")
+botonTitulos.addEventListener('click', (e)=>{
+    titulo.classList.add("text-danger")
+    console.log(e);
 });
-        
-botonFondos.addEventListener('click', ()=>{
 
+botonFondos.addEventListener('click', (e)=>{
+    containerOfertas.classList.add("bg-black");
 });
 
-botonMostrarOcultar.addEventListener('click', ()=>{
+botonMostrarOcultar.addEventListener('click', (e)=>{
+    oferta.classList.toggle('hidden');
 
 });

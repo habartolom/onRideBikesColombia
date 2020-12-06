@@ -13,16 +13,21 @@ if (productosArray != null) {
 	}
 }
 
+const aviso = document.getElementById('aviso');
+const error = document.getElementById('error');
 
 const button = document.getElementById('botonComprar');
 button.addEventListener('click', ()=>{
-    localStorage.removeItem('productos');
-    window.location = "./comprar.html";
-    swal({
-        title: "Felicitaciones!",
-        text: "Se ha realizado tu compra con éxito. Vuelve pronto!",
-        icon: "success",
-      });
-    setTimeout(()=>{
-    }, 2000);
+
+    if(localStorage.getItem('productos') != null){
+
+        localStorage.removeItem('productos');
+        aviso.classList.toggle('hidden');
+        setTimeout(()=>{
+            window.location.reload();
+        }, 2000);
+    }
+    else{
+        error.classList.toggle('hidden');
+    }
 });

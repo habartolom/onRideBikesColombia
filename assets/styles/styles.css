@@ -8,3 +8,16 @@
     background-position: center;
     height: 150px;
 }
+
+.hidden{
+    display: none;
+}
+
+.alert-fixed {
+    position:fixed; 
+    top: 78px; 
+    left: 0px; 
+    width: 100%;
+    z-index:9999; 
+    border-radius:0px
+}

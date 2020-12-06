@@ -100,17 +100,24 @@ producto12.addEventListener('click', ()=>{
 })
 
 
+const aviso = document.getElementById('aviso');
 
 
 let productosArray = [];
 
 function agregarObjeto(producto){
-    if(localStorage.getItem('productos') != null){
-        productosArray = JSON.parse(localStorage.getItem('productos'));
+	if(localStorage.getItem('productos') != null){
+		productosArray = JSON.parse(localStorage.getItem('productos'));
     }
     productosArray.push(producto);
     const productosToString = JSON.stringify(productosArray);
-    localStorage.setItem('productos', productosToString);
+	localStorage.setItem('productos', productosToString);
+	aviso.classList.toggle('hidden');
+
+	setTimeout(() => {
+		aviso.classList.toggle('hidden');
+	}, 1500);
+
 }
 
 
